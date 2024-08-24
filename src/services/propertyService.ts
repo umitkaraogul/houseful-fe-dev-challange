@@ -17,4 +17,24 @@ export default class propertyService {
       throw error;
     }
   }
+  static async updateProperty(updatedProperty: Property): Promise<void> {
+    const url = `${this.baseUrl}/${updatedProperty.id}`;
+
+    try {
+      const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedProperty)
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Something went wrong on fetch');
+      }
+      return response.json();
+    } catch (error) {
+      throw error;
+    }
+  }
 }

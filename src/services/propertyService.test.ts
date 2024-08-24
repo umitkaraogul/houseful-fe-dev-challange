@@ -49,4 +49,22 @@ describe('propertyService', () => {
       errorMessage
     );
   });
+
+  it('should update a property', async () => {
+    const mockProperty = mockProperties[0];
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({})
+    });
+
+    await propertyService.updateProperty(mockProperty);
+
+    expect(global.fetch).toHaveBeenCalledWith(`${config.apiUrl}/properties/1`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(mockProperty)
+    });
+  });
 });
