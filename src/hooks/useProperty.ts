@@ -81,9 +81,34 @@ export const useProperty = () => {
     }
   };
 
+  const filterById = useCallback(async (id: number) => {
+    setPropertiesState((state) => ({
+      ...state,
+      isLoading: true,
+      error: undefined
+    }));
+
+    try {
+      const response = await PropertyService.getPropertyById(id);
+      setPropertiesState((state) => ({
+        ...state,
+        isLoading: false,
+        error: undefined,
+        property: response
+      }));
+    } catch (error) {
+      setPropertiesState((state) => ({
+        ...state,
+        isLoading: false,
+        error: error as Error
+      }));
+    }
+  }, []);
+
   return {
     ...propertiesState,
     filter,
-    updatePropertyStatus
+    updatePropertyStatus,
+    filterById
   };
 };

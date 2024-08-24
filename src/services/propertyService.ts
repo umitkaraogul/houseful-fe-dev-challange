@@ -37,4 +37,18 @@ export default class propertyService {
       throw error;
     }
   }
+
+  static async getPropertyById(id: number): Promise<Property> {
+    const url = `${this.baseUrl}/${id}`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Something went wrong on fetch');
+      }
+      return response.json();
+    } catch (error) {
+      throw error;
+    }
+  }
 }

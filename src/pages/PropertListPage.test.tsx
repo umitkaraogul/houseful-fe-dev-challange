@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { vi, Mock } from 'vitest';
+import { MemoryRouter } from 'react-router-dom';
 import propertyService from '@/services/propertyService';
 import PropertyListPage from './PropertyListPage';
 import { mockProperties } from '@/test/mockData';
@@ -15,7 +16,11 @@ describe('PropertyListPage Component', () => {
   it('should render PropertyListPage and display property listings', async () => {
     (propertyService.getProperties as Mock).mockResolvedValue(mockProperties);
 
-    render(<PropertyListPage />);
+    render(
+      <MemoryRouter>
+        <PropertyListPage />
+      </MemoryRouter>
+    );
 
     await waitFor(() => {
       expect(screen.getByText('Property Listings')).toBeInTheDocument();

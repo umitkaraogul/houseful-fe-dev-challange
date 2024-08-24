@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Property } from '@/types';
 import { formatPrice } from '@/util';
 
@@ -7,12 +8,18 @@ export type PropertyCardProps = {
 };
 
 const PropertyCard = ({ property, onStatusChange }: PropertyCardProps) => {
+  const navigate = useNavigate();
   return (
     <div
       className='border mb-4 rounded-lg shadow-lg'
       data-testid='property-card'
     >
-      <div className='p-2 cursor-pointer'>
+      <div
+        className='p-2 cursor-pointer'
+        onClick={() => {
+          navigate(`/properties/${property.id}`);
+        }}
+      >
         <img
           src={property.image}
           alt='Property'
@@ -24,10 +31,10 @@ const PropertyCard = ({ property, onStatusChange }: PropertyCardProps) => {
           <p>Price: {formatPrice(property.price)}</p>
           <span
             className={`${
-              status === 'active' ? 'bg-green-500' : 'bg-red-500'
+              property.status === 'active' ? 'bg-green-500' : 'bg-red-500'
             } text-white py-1 px-3 rounded-full`}
           >
-            {status === 'active' ? 'Active' : 'Expired'}
+            {property.status === 'active' ? 'Active' : 'Expired'}
           </span>
         </div>
       </div>
