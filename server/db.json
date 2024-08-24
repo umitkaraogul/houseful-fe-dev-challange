@@ -1,0 +1,49 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "image": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=800",
+      "bedrooms": 3,
+      "address": "123 Main St",
+      "postcode": "AB1 2CD",
+      "price": 250000,
+      "status": "expired"
+    },
+    {
+      "id": "2",
+      "image": "https://images.unsplash.com/photo-1464146072230-91cabc968266?q=80&w=800",
+      "bedrooms": 4,
+      "address": "456 Elm St",
+      "postcode": "EF3 4GH",
+      "price": 320000,
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "image": "https://images.unsplash.com/photo-1515080436033-5724a92601d7?q=80&w=1200",
+      "bedrooms": 3,
+      "address": "342 Abc St",
+      "postcode": "N12 7DL",
+      "price": 520000,
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "image": "https://images.unsplash.com/photo-1611510631469-6df4a3e6edc8?q=80&w=1200",
+      "bedrooms": 2,
+      "address": "791 Twe St",
+      "postcode": "EK2 8HV",
+      "price": 250000,
+      "status": "expired"
+    },
+    {
+      "id": "5",
+      "image": "https://images.unsplash.com/photo-1509732499382-20be2145852e?q=80&w=1200",
+      "bedrooms": 4,
+      "address": "678 TGA St",
+      "postcode": "TU2 7BE",
+      "price": 420000,
+      "status": "expired"
+    }
+  ]
+}

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "server": "json-server --port 4002  ./server/db.json",
     "build": "tsc && vite build",
     "test": "vitest run --config vite.config.ts",
     "test:watch": "vitest --config vite.config.ts",
