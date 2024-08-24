@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Property } from '@/types';
 import { formatPrice } from '@/util';
+import PropertyStatusBadge from '../PropertyStatusBadge';
 
 export type PropertyCardProps = {
   property: Property;
@@ -29,13 +30,7 @@ const PropertyCard = ({ property, onStatusChange }: PropertyCardProps) => {
           <h2 className='text-xl font-semibold'>{property.address}</h2>
           <p>Bedrooms: {property.bedrooms}</p>
           <p>Price: {formatPrice(property.price)}</p>
-          <span
-            className={`${
-              property.status === 'active' ? 'bg-green-500' : 'bg-red-500'
-            } text-white py-1 px-3 rounded-full`}
-          >
-            {property.status === 'active' ? 'Active' : 'Expired'}
-          </span>
+          <PropertyStatusBadge status={property.status} />
         </div>
       </div>
       <div className='cursor-pointer mx-4 mb-2'>
