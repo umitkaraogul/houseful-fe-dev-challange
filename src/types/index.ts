@@ -5,5 +5,12 @@ export type Property = {
   address: string;
   postcode: string;
   price: number;
-  status: 'active' | 'expired';
+  status: PropertyStatus;
+};
+
+export type PropertyStatus = 'active' | 'expired';
+
+export type PropertyFilterCriteria = {
+  bedrooms: number | null;
+  status?: string;
 };
