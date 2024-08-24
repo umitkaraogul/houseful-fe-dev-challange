@@ -1,15 +1,46 @@
-# Houseful front-end challenge
+# The Houseful Code Challenge
 
-Create a simple front-end application that will enable estate agents to manage property listings.
-We predominantly use React at Houseful for our applications but we welcome a submission with the tools/technology of your choice.
+    This repository contains the complete source code for the runtime of The Houseful Code Challenge.
 
-## Tooling
+## 3. The Task Details
 
-We've included a basic build setup with Vite, React, Typescript, Vitest and React Testing Library. Feel free to use it or to delete it and write the test in whatever tools/technology you feel comfortable with. If you're using the build setup in this repo, you can use the following commands:
+Please continue reading the [TASK-README.md](./task/TASK-README.md) file.
+
+## Prerequisites
+
+- Nodejs
+- Git
+
+## Installing
+
+Install [npm](https://nodejs.org/en/download/) or [Yarn](https://yarnpkg.com)
+
+Clone whole source code as follows and go to houseful-fe-dev-challange folder
+
+```
+git clone https://github.com/umitkaraogul/houseful-fe-dev-challange
+```
+
+```
+cd houseful-fe-dev-challange
+```
+
+## Environment Variables
+
+- Copy .env.example to .env (e.g. `cp .env.example .env`) for providing environment variables.
+
+  ```
+  VITE_API_URL=
+  ```
+
+## Running
 
 ```sh
 # Install dependencies
 pnpm i
+
+# Start api server
+pnpm run server
 
 # Start development server
 pnpm dev
@@ -19,57 +50,10 @@ pnpm test
 pnpm test:watch
 ```
 
-## Task
+> The front end will start on [port 5173](http://localhost:5173)
 
-An agent should be able to do the following:
+## Deployment
 
-- View a list of properties for sale
-- Mark an individual property listing as expired
-- See which properties are `active` and which have been `expired`.
+This project deployed on [Vercel](https://vercel.com/)
 
-We have no requirements on the user experience or look and feel so we welcome you to do what you think is best based off the following criteria.
-
-A property listing should contain the following information:
-
-- Image of property
-- Number of bedrooms
-- Address (including postcode)
-- Asking price
-- Status - `active` or `expired`
-
-Create a simple, responsive, application that can perform the tasks outlined above.
-
-Below is a visual design of a listings card to illustrate what an individual listing could look like. **This image is not a specific design to implement**. It is only there to give you an idea. Anything not present in the requirements above does not need to be implemented.
-
-Although responsive layouts are not present in this visual, please build them in a way that you think would offer a good user experience.
-
-![Property Listings Card](/listing-card.png "Property Listings Card")
-
-## Data handling
-
-We would like to see data fetching as part of your application. We recommend you use a tool like [JSON Server](https://github.com/typicode/json-server) or [MSW](https://mswjs.io/) to mock the data, rather than build out any APIs. If you use a mocking tool, please ensure it's installed as a project dependency and not globally. The project should build and run successfully after installing the project's local dependencies.
-
-We do not expect you to persist state or store any updates to the listings.
-
-## Technical Notes
-
-You should also ask yourself the following questions before submitting the test, this is what we value and will mark you on:
-
-- Is your code easy to maintain?
-- Does your solution scale if more teams were to contribute?
-- Does your application work across different screen sizes?
-- Is your logic well tested?
-- Is your application accessible to all users?
-- Is your code semantic?
-
-Feel free to make and state assumptions on any details not covered in the challenge.
-
-We're not expecting a fully functional solution, we recommend spending **2 - 4 hours**.
-
-## Follow-up discussions
-
-In the follow-up technical interview we will discuss the solution you have submitted. Think about how you would automate the deployment (what should be built into the pipeline) or what infrastructure you would choose to support your application.
-
-Please do reach out to the talent team if you have any questions.
-
-**Good luck!**
+You can test [the application on Vercel.](https://houseful-fe-dev-challange.vercel.app/)
