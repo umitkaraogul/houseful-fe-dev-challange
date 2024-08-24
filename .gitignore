@@ -10,3 +10,6 @@ node_modules
 .env.development
 .env.test
 .env.production
+
+# test coverage
+coverage

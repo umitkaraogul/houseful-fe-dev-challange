@@ -67,4 +67,17 @@ describe('propertyService', () => {
       body: JSON.stringify(mockProperty)
     });
   });
+
+  it('should fetch a property by ID with getPropertyById', async () => {
+    const mockProperty = mockProperties[0];
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockProperty
+    });
+
+    const property = await propertyService.getPropertyById(1);
+
+    expect(property).toEqual(mockProperty);
+    expect(global.fetch).toHaveBeenCalledWith(`${config.apiUrl}/properties/1`);
+  });
 });
