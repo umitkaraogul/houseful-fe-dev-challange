@@ -1,3 +1,5 @@
-const App = () => <h1>Hello World</h1>;
+import PropertyListPage from '@/pages/PropertyListPage';
+
+const App = () => <PropertyListPage />;
 
 export default App;
