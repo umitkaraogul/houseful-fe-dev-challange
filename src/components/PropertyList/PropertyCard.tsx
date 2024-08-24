@@ -3,9 +3,10 @@ import { formatPrice } from '@/util';
 
 export type PropertyCardProps = {
   property: Property;
+  onStatusChange: () => void;
 };
 
-const PropertyCard = ({ property }: PropertyCardProps) => {
+const PropertyCard = ({ property, onStatusChange }: PropertyCardProps) => {
   return (
     <div
       className='border mb-4 rounded-lg shadow-lg'
@@ -29,6 +30,17 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
             {status === 'active' ? 'Active' : 'Expired'}
           </span>
         </div>
+      </div>
+      <div className='cursor-pointer mx-4 mb-2'>
+        {property.status === 'active' && (
+          <button
+            data-testid='status-change-button'
+            onClick={() => onStatusChange()}
+            className=' bg-indigo-500 text-white p-2 rounded-lg hover:bg-indigo-700'
+          >
+            Mark as Expired
+          </button>
+        )}
       </div>
     </div>
   );
