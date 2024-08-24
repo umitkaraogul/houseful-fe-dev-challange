@@ -3,3 +3,10 @@ node_modules
 .vscode/*
 !.vscode/settings.json
 .DS_Store
+
+
+# env files
+.env
+.env.development
+.env.test
+.env.production
